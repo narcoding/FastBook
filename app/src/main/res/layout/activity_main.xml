@@ -80,4 +80,21 @@
         android:layout_below="@+id/btnhizli"
         android:layout_alignParentStart="true" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Çok H"
+        android:id="@+id/btncokh"
+        android:layout_above="@+id/btnhizli"
+        android:layout_alignEnd="@+id/btnhizli" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ZEN"
+        android:id="@+id/btnzen"
+        android:layout_below="@+id/btngbd"
+        android:layout_toEndOf="@+id/btnbsm" />
+
 </RelativeLayout>
