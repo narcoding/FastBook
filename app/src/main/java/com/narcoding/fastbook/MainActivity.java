@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -162,11 +161,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    Thread thread;
+
     private void runThread(){
-        new Thread(){
+
+        thread= new Thread(){
             public void run(){
 
-                while (k++< words.length){
+                while (++k< words.length){
                     try {
                         runOnUiThread(new Runnable() {
                             @Override
@@ -184,7 +187,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
-        }.start();
+        };
+        thread.start();
 
     }
 
@@ -220,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
                 s=s2;
                 words = s.split("\\s+");
                 j=0;
+                k=0;
             }
         });
 
@@ -229,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
                 s=s3;
                 words = s.split("\\s+");
                 j=0;
+                k=0;
             }
         });
 
@@ -238,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
                 s=s1;
                 words = s.split("\\s+");
                 j=0;
+                k=0;
             }
         });
 
@@ -256,13 +263,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if(words!=null&& j<words.length){
-                    textView.setText(words[j] + "");
-                    j++;
-                }
-                else{
-                    Toast.makeText(MainActivity.this,"Bitti",Toast.LENGTH_LONG).show();
-                }
+
+               // thread.interrupted();
 
             }
 
