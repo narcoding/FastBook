@@ -61,4 +61,23 @@
         android:layout_alignEnd="@+id/btndur"
         android:layout_marginTop="46dp" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hızlı"
+        android:id="@+id/btnhizli"
+        android:layout_alignTop="@+id/btndur"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/btnyavas" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yavaş"
+        android:id="@+id/btnyavas"
+        android:layout_below="@+id/btnhizli"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
