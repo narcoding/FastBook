@@ -10,8 +10,11 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
-    Button button,btngbd,btnbsm,btnbulmak;
-    int j=0;
+    Button btndur,btngbd,btnbsm,btnbulmak,btnoku;
+    int j=0,k=0;
+    int hizli=200;
+    int yavas=400;
+    int surat=300;
     String s,s1,s2,s3;
 
     //String[] split;
@@ -22,10 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void init(){
         textView= (TextView) findViewById(R.id.txt);
-        button= (Button) findViewById(R.id.button);
+        btndur= (Button) findViewById(R.id.btndur);
         btnbsm= (Button) findViewById(R.id.btnbsm);
         btngbd= (Button) findViewById(R.id.btngbd);
         btnbulmak= (Button) findViewById(R.id.btnbulmak);
+        btnoku= (Button) findViewById(R.id.btnoku);
 
 
         s3="İkimiz birden sevinebiliriz göğe bakalım\n" +
@@ -156,6 +160,32 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void runThread(){
+        new Thread(){
+            public void run(){
+
+                while (k++< words.length){
+                    try {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                    textView.setText(words[k]);
+
+                            }
+                        });
+                        Thread.sleep(surat);
+                    }
+                    catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }.start();
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -220,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        btndur.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -234,6 +264,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
+        });
+
+
+
+        btnoku.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                runThread();
+            }
         });
 
 
