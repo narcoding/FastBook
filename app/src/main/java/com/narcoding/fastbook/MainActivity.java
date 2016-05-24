@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
-    Button btndur,btngbd,btnbsm,btnbulmak,btnoku;
+    Button btndur,btngbd,btnbsm,btnbulmak,btnoku,btnhizli,btnyavas;
     int j=0,k=0;
     int hizli=200;
     int yavas=400;
@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         btngbd= (Button) findViewById(R.id.btngbd);
         btnbulmak= (Button) findViewById(R.id.btnbulmak);
         btnoku= (Button) findViewById(R.id.btnoku);
+        btnhizli= (Button) findViewById(R.id.btnhizli);
+        btnyavas= (Button) findViewById(R.id.btnyavas);
 
 
         s3="İkimiz birden sevinebiliriz göğe bakalım\n" +
@@ -264,6 +266,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
+        });
+
+        btnhizli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                surat=hizli;
+            }
+        });
+
+        btnyavas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                surat=yavas;
+            }
         });
 
 
