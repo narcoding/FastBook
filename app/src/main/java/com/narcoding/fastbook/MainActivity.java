@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btngbd= (Button) findViewById(R.id.btngbd);
         btnbulmak= (Button) findViewById(R.id.btnbulmak);
 
+
         s3="İkimiz birden sevinebiliriz göğe bakalım\n" +
                 "Şu kaçamak ışıklardan şu şeker kamışlarından\n" +
                 "Bebe dişlerinden güneşlerden yaban otlarından\n" +
