@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init(){
         textView= (TextView) findViewById(R.id.txt);
+
         btndur= (Button) findViewById(R.id.btndur);
         btnbsm= (Button) findViewById(R.id.btnbsm);
         btngbd= (Button) findViewById(R.id.btngbd);
@@ -249,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void run() {
 
-                                    textView.setText(words[k]);
+                                textView.setText(words[k]);
 
                             }
                         });
